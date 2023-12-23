@@ -1,0 +1,13 @@
+div ul {
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.button:hover,
+.button.selected {
+  color: white;
+  background-color: #464646;
+}

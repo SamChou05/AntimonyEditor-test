@@ -1,0 +1,28 @@
+#dropdown {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #1c1c1c;
+    border: 1px solid #d4d4d4;
+    width: 40vh;
+    overflow-y: scroll;
+    height: 150px;
+    display: none;
+}
+
+#dropdown a {
+    display: block;
+    text-decoration: none;
+    border: 1px solid #ffffff;
+    overflow: auto;
+    padding: 5px;
+}
+
+#biomodel-browse {
+    position: relative;
+    right: 1.4px;
+}
+
+.code-editor {
+  height: 80vh;
+}

@@ -40,7 +40,7 @@ const RateLawModal: React.FC<RateLawModalProps> = ({ isOpen, onClose, onSubmit }
         <textarea className='body'
           value={SpeciesCreated}
           onChange={(e) => setSpeciesCreated(e.target.value)}
-          placeholder="consumed"
+          placeholder="consumeafafafd"
         />
         <textarea className='body'
           value={rate}

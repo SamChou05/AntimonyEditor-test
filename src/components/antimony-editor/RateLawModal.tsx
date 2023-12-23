@@ -4,18 +4,19 @@ import "./RateLawModal.css"; // Make sure to create or rename the corresponding 
 interface RateLawModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onSubmit: (rateLaw: { variable1: string, variable2: string, rate: string }) => void;
+  onSubmit: (rateLaw: {ModelName: string, SpeciesConsumed: string, SpeciesCreated: string, rate: string }) => void;
 }
 
 const RateLawModal: React.FC<RateLawModalProps> = ({ isOpen, onClose, onSubmit }) => {
-  const [variable1, setVariable1] = useState<string>('');
-  const [variable2, setVariable2] = useState<string>('');
+  const [ModelName, setModelName] = useState<string>('');
+  const [SpeciesConsumed, setSpeciesConsumed] = useState<string>('');
+  const [SpeciesCreated, setSpeciesCreated] = useState<string>('');
   const [rate, setRate] = useState<string>('');
 
   if (!isOpen) return null;
 
   const handleSubmit = () => {
-    onSubmit({ variable1, variable2, rate });
+    onSubmit({ ModelName, SpeciesConsumed, SpeciesCreated, rate });
     onClose();
   };
 
@@ -27,14 +28,19 @@ const RateLawModal: React.FC<RateLawModalProps> = ({ isOpen, onClose, onSubmit }
         </div>
         <h2 className='title'>Define Rate Law</h2>
         <textarea className='body'
-          value={variable1}
-          onChange={(e) => setVariable1(e.target.value)}
-          placeholder="Variable 1"
+          value={ModelName}
+          onChange={(e) => setModelName(e.target.value)}
+          placeholder="Model Name"
         />
         <textarea className='body'
-          value={variable2}
-          onChange={(e) => setVariable2(e.target.value)}
-          placeholder="Variable 2"
+          value={SpeciesConsumed}
+          onChange={(e) => setSpeciesConsumed(e.target.value)}
+          placeholder="Species Consumed"
+        />
+        <textarea className='body'
+          value={SpeciesCreated}
+          onChange={(e) => setSpeciesCreated(e.target.value)}
+          placeholder="consumed"
         />
         <textarea className='body'
           value={rate}

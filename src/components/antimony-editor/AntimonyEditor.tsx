@@ -132,13 +132,13 @@ const AntimonyEditor: React.FC<AntimonyEditorProps & { database: IDBPDatabase<My
     console.log("yooo");
   };
 
-  const handleRateLawSubmit = (rateLaw: { variable1: string, variable2: string, rate: string }) => {
+  const handleRateLawSubmit = (rateLaw: { ModelName: string, SpeciesConsumed: string, SpeciesCreated: string, rate: string }) => {
     if (!editorInstance) return;
   
-    const { variable1, variable2, rate } = rateLaw;
+    const { ModelName, SpeciesConsumed, SpeciesCreated, rate } = rateLaw;
   
     // Process the rate law variables as needed
-    let combinedRateLaw = `Variable 1: ${variable1}, Variable 2: ${variable2}, Rate: ${rate}`;
+    let combinedRateLaw = `Rate Law: ${SpeciesConsumed} -> ${SpeciesCreated}; ${rate}`;
     
     const selection = editorInstance.getSelection();
     let editorContent = editorInstance.getValue();
